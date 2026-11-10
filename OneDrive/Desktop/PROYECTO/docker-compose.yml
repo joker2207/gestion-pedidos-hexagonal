@@ -1,0 +1,15 @@
+# Opcional: PostgreSQL para usar el perfil "postgres" del backend
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: pedidosdb
+      POSTGRES_USER: pedidos
+      POSTGRES_PASSWORD: pedidos
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
